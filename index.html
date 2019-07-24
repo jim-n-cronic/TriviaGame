@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8">
+    <title>Trivia Game</title>
+   
+   <!--stylesheetCSS-->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    
+    <!--bootStrap CSS-->
+    
+
+    <!--jQuery CDN-->
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+<div id="startScreen" class="container">
+
+    <div id="gameScreen" class="container">
+      
+      <h1>Trivial!</h1>
+      
+      <div class="jumbotron">
+            
+            <!-- TIMER! -->         
+          <div id="timerDisplay">30</div>
+          
+          
+                <!-- CONTAINS TRIVIA GAME!-->
+            <div id="triviaGameDiv" class="container">
+                  <!-- QUESTIONS WILL APPEND HERE-->
+                <p id="questionDiv"></p>
+                    <!-- LIST OF MULTIPLE CHOICE ANSWERS -->
+                <div id="choiceDiv">
+                  <p id="choiceOne"></p>  
+                  <br>  
+                  <p id="choiceTwo"></p>  
+                  <br>  
+                  <p id="choiceThree"></p>  
+                  <br>  
+                  <p id="choiceFour"></p> 
+                </div>
+              <button id="selectAns" type="button">Select Answer!</button>
+            </div>
+
+            <!--Correct choice screen ?-->
+            <!-- Wrong choice screen ?-->
+        
+      </div>
+    
+    </div>
+
+</div>
+
+<script src="assets/javascript/app.js"></script>
+
+
+
+</body>
+</html>
