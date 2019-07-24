@@ -55,21 +55,21 @@ $(document).ready(function () {
 
     
     var QUIZ = [
-        {queUno: [1,2,3,4],
-            choiceQ1: [],
-            ansOne: 3 },
-        {queDos: [548,4857,2445,564],
-            choiceQ2: [],
-            ansTwo: 2 },
-        {queTre: [618],
-            choiceQ3: [],
-            ansTre: true },
-        {queQtro: [232,5454,76764,534234576,5,5,35,34,5757,3345],
-            choiceQ4: [],
-            ansQtro: 5 },
-        {queFve: ["here the fuck i am", "moFuckaJones"],
-            choiceQ5: [],
-            nsFve: 0 },
+        {queUno: ["What famous Mathematitian developed a sequential formula for the Golden Ratio (Phi)?"],
+            choicesQ1: ["Issac Newton","Albert Einstein","Leonardo Bigollo","Copernicus"],
+            ansOne: 2 },
+        {queDos: ["Who saved Apple from going bankrupt in the '90s?"],
+            choicesQ2: ["Michael Dell", "Bill Gates", "Mark Cuban", "Warren Buffet"],
+            ansTwo: 1 },
+        {queTre: ["Though PHP may appear to look simpler than javascript, why is js the top scrtipting language?"],
+            choicesQ3: ["Gives instant-feedback", "It's less vulnerable to breach", "Much more control without interferring with bandwith", "All reasons shown!"],
+            ansTre: 3 },
+        {queQtro: ["What is the Golden Ratio?"],
+            choicesQ4: [1.618, 5.1, 0.618, 0.3218],
+            ansQtro: 0 },
+        {queFve: ["People get shocked when they see PHI is in every great picure they see, what's an easy way to tell where phi is?"],
+            choiceQ5: ["Look for the embeded Greek letter, phi.", "Look at the center of the image, youll notice that key elements are just slightly off-center.", "console.log to find it", "take out a ruler and measure for it."],
+            ansFve: 1 },
     ];
     console.log(QUIZ[0]);
     console.log(QUIZ[1]);
@@ -77,11 +77,14 @@ $(document).ready(function () {
     console.log(QUIZ[3]);
     console.log(QUIZ[4]);
 
-//loop thru [QUIZ] to show QUIZ.que(number) 
+//loop thru [QUIZ] to show on html 
 for (var q = 0; q < QUIZ.length; q++) {
     const currentQues = QUIZ[q]
-    $("#questionDiv").html("<h4>" + QUIZ[q] + "</h4>").show;   
+    $("#questionDiv").html(QUIZ[q].queUno); 
+    $("#choiceDiv").html(QUIZ[q].choicesQ1); 
+    $(QUIZ[q].choicesQ1).split($("#choiceDiv"));  
         console.log($("#questionDiv"));
+        console.log($("#choiceDiv"));
         
     
 }
