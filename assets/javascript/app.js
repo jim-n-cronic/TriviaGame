@@ -9,8 +9,8 @@ function populate() {
         // show choices
         var choices = quiz.getQuestionIndex().choices;
         for (var i = 0; i < choices.length; i++) {
-            var element = document.getElementById("choices" + i);
-            element.innerHTML = choices[i];
+            var elementChoice = document.getElementById("choices" + i);
+            elementChoice.innerHTML = choices[i];
         }
         showProgress();
     }
@@ -21,13 +21,13 @@ function guess(id, guess) {
     button.onclick = function() {
         quiz.guess(guess);
         populate();
-    }
+    };
 }
 
 function showProgress() {
     var currentQuestionNumber = quiz.questionIndex + 1;
-    var element = $("#progress");
-    element.innerHTML = "Question " + currentQuestionNumber + "of " + quiz.questions.length;
+    var elementProg = $("#progress");
+    elementProg.innerHTML = "Question " + currentQuestionNumber + "of " + quiz.questions.length;
 }
 
 
@@ -35,8 +35,8 @@ function showProgress() {
 function showScores() {
     var gameOverHtml = "<h1>Result</h1>";
     gameOverHtml += "<h2 id='score'> Your scores: " + quiz.score + "</h2>";
-    var element = $("#quiz");
-    element.innerHTML = gameOverHtml;
+    var elementQuiz = $("#quiz");
+    elementQuiz.innerHTML = gameOverHtml;
 }
 
 
