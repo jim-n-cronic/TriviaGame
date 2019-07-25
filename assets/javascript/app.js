@@ -1,3 +1,104 @@
+function populate() {
+    if(quiz.isEnded()) {
+        //show scores//
+    }   else {
+        // show question
+        var element = $("#question");
+        element.innerHTML = quiz.getQuestionIndex().text;
+
+        // show choices
+        var choices = quiz.getQuestionIndex().choices;
+        for (var i = 0; i < choices.length; i++) {
+            var element = document.getElementById("choices" + i);
+            element.innerHTML = choices[i];
+        }
+        showProgress();
+    }
+}
+
+function guess(id, guess) {
+    var button = document.getElementById(id);
+    button.onclick = function() {
+        quiz.guess(guess);
+        populate();
+    }
+}
+
+function showProgress() {
+    var currentQuestionNumber = quiz.questionIndex + 1;
+    var element = $("#progress");
+    element.innerHTML = "Question " + currentQuestionNumber + "of " + quiz.questions.length;
+}
+
+
+
+function showScores() {
+    var gameOverHtml = "<h1>Result</h1>";
+    gameOverHtml += "<h2 id='score'> Your scores: " + quiz.score + "</h2>";
+    var element = $("#quiz");
+    element.innerHTML = gameOverHtml;
+}
+
+
+
+
+var questions = [
+    new Question("What famous Mathematitian developed a sequential formula for the Golden Ratio (Phi)?", ["Issac Newton","Albert Einstein","Leonardo Bigollo","Copernicus"], "Leonardo Bigollo"),
+    new Question("Who saved Apple from going bankrupt in the '90s?", ["Michael Dell", "Bill Gates", "Mark Cuban", "Warren Buffet"], "Bill Gates"),
+    new Question("Though PHP may appear to look simpler than javascript, why is js the top scrtipting language?", ["Gives instant-feedback", "It's less vulnerable to breach", "Much more control without interferring with bandwith", "All reasons shown!"], "All reasons shown!"),
+    new Question("What is the Golden Ratio?", ["1.618", "5.1", "0.618", "0.3218"], "1.618"),
+    new Question("People get shocked when they see PHI is in every great picure they see, what's an easy way to tell where phi is?", ["Look for the embeded Greek letter, phi.", "Look at the center of the image, youll notice that key elements are just slightly off-center.", "console.log to find it", "take out a ruler and measure for it."], "Look for the embedded Greek letter, phi.")
+];
+
+var quiz = new Quiz(questions);
+
+populate();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//previous attempt BELOW~~~~~~~~~vvvv//
 //TrivaGame./assets/javascript/app.js
 //BGEIN SCRIPT~~~~~~
 /*
@@ -51,6 +152,8 @@ resume();
 
 */
 //TRIVAQUIZ SHIT
+
+/*
 $(document).ready(function () {
 
     
@@ -88,8 +191,6 @@ for (var q = 0; q < QUIZ.length; q++) {
         
     
 }
-
-
-
-                    
+                   
 });
+*/
